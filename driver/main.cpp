@@ -729,6 +729,10 @@ void registerPredefinedTargetVersions() {
       VersionCondition::addPredefinedGlobalIdent("Cygwin");
     }
     break;
+  case llvm::Triple::WASI:
+    VersionCondition::addPredefinedGlobalIdent("Posix");
+    VersionCondition::addPredefinedGlobalIdent("CRuntime_Musl");
+    break;
   case llvm::Triple::Linux:
     VersionCondition::addPredefinedGlobalIdent("linux");
     VersionCondition::addPredefinedGlobalIdent("Posix");
